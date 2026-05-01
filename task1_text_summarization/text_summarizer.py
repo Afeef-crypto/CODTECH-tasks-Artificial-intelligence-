@@ -63,6 +63,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Text Summarization Tool")
     parser.add_argument("--text", type=str, default="", help="Input text to summarize")
     parser.add_argument(
+        "--interactive",
+        action="store_true",
+        help="Prompt for text input interactively",
+    )
+    parser.add_argument(
         "--show-example",
         action="store_true",
         help="Run summarization on built-in example text",
@@ -75,6 +80,13 @@ def main() -> None:
     args = parser.parse_args()
 
     input_text = args.text.strip()
+
+    if args.interactive:
+        print("Paste or type the text to summarize, then press Enter:")
+        entered = input("> ").strip()
+        if entered:
+            input_text = entered
+
     if args.show_example or not input_text:
         input_text = DEFAULT_TEXT
 

@@ -51,6 +51,12 @@ Or summarize custom text:
 python task1_text_summarization/text_summarizer.py --text "Your long article text here."
 ```
 
+Or enter text interactively:
+
+```bash
+python task1_text_summarization/text_summarizer.py --interactive
+```
+
 ### Task 2: Speech to Text
 
 **Description:**  
@@ -70,8 +76,8 @@ Available engines: `sphinx` (offline) and `google` (online API).
 If your audio has a wrong extension (for example MP3 saved as `.wav`), convert first:
 
 ```bash
-ffmpeg -y -i input_audio.wav -ac 1 -ar 16000 converted_audio.wav
-python task2_speech_to_text/speech_to_text.py --audio converted_audio.wav --engine sphinx
+ffmpeg -y -i input_audio.wav -ac 1 -ar 16000 task2_speech_to_text/output_converted.wav
+python task2_speech_to_text/speech_to_text.py --audio task2_speech_to_text/output_converted.wav --engine sphinx
 ```
 
 ### Task 3: Neural Style Transfer
@@ -111,3 +117,4 @@ jupyter notebook task4_text_generation/text_generation_notebook.ipynb
 ```
 
 The notebook demonstrates generated text from user prompts using GPT-2.
+It now asks for prompt input when you run the generation cell.
