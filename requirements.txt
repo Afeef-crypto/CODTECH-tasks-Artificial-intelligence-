@@ -1,0 +1,11 @@
+numpy
+Pillow
+SpeechRecognition
+pocketsphinx
+torch
+torchvision
+transformers
+sentencepiece
+accelerate
+jupyter
+ipykernel
